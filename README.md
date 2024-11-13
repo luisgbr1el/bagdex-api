@@ -29,3 +29,17 @@ Listar os tipos de Bagmon do jogo.
 - **weaknesses** (opcional)
 
     Retornará todos os tipos que possuírem as fraquezas fornecidas. Múltiplas fraquezas devem ser separadas por vírgula. (**Ex:** `/types?weaknesses=1,2`)
+
+#### Resposta
+```json
+[
+    {
+        "id": 13,
+        "name": "vegetal",
+        "weaknesses": [
+            7
+        ],
+        "artwork": null
+    }
+]
+```
