@@ -1,5 +1,5 @@
 # BagdexAPI
-Uma API simples que possibilita obter dados do bestiário do jogo **[Bagdex](https://caramelogames.com.br/#/dex)**.
+Uma API simples que possibilita obter dados do bestiário do jogo **<a href="https://caramelogames.com.br/#/dex">Bagdex</a>**.
 
 ## Endpoints
 Lista de *endpoints* já disponíveis na API.
