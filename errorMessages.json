@@ -1,0 +1,4 @@
+{
+    "typeNotFound": "The provided 'id' does not match any type.",
+    "weaknessesNotFound": "The provided 'weaknesses' do not match any type."
+}

@@ -1,0 +1,46 @@
+[
+    {
+        "level": -3,
+        "description": "Não Avaliada"
+    },
+    {
+        "level": -2,
+        "description": "Não Aplicável"
+    },
+    {
+        "level": -1,
+        "description": "Dados Insuficientes"
+    },
+    {
+        "level": 0,
+        "description": "Pouco Preocupante"
+    },
+    {
+        "level": 1,
+        "description": "Quase Ameaçada"
+    },
+    {
+        "level": 2,
+        "description": "Vulnerável"
+    },
+    {
+        "level": 3,
+        "description": "Em Perigo"
+    },
+    {
+        "level": 4,
+        "description": "Criticamente em Perigo"
+    },
+    {
+        "level": 5,
+        "description": "Regionalmente Extinta"
+    },
+    {
+        "level": 6,
+        "description": "Extinta na Natureza"
+    },
+    {
+        "level": 7,
+        "description": "Extinta"
+    }
+]

@@ -1,0 +1,124 @@
+[
+    {
+        "id": 1,
+        "name": "aquático",
+        "weaknesses": [],
+        "artwork": null
+    },
+    {
+        "id": 2,
+        "name": "metálico",
+        "weaknesses": [],
+        "artwork": null
+    },
+    {
+        "id": 3,
+        "name": "cósmico",
+        "weaknesses": [],
+        "artwork": null
+    },
+    {
+        "id": 4,
+        "name": "voltaico",
+        "weaknesses": [],
+        "artwork": null
+    },
+    {
+        "id": 5,
+        "name": "místico",
+        "weaknesses": [],
+        "artwork": null
+    },
+    {
+        "id": 6,
+        "name": "espectral",
+        "weaknesses": [],
+        "artwork": null
+    },
+    {
+        "id": 7,
+        "name": "flamejante",
+        "weaknesses": [],
+        "artwork": null
+    },
+    {
+        "id": 8,
+        "name": "glacial",
+        "weaknesses": [],
+        "artwork": null
+    },
+    {
+        "id": 9,
+        "name": "inseto",
+        "weaknesses": [],
+        "artwork": null
+    },
+    {
+        "id": 10,
+        "name": "guerreiro",
+        "weaknesses": [],
+        "artwork": null
+    },
+    {
+        "id": 11,
+        "name": "comum",
+        "weaknesses": [],
+        "artwork": null
+    },
+    {
+        "id": 12,
+        "name": "mineral",
+        "weaknesses": [],
+        "artwork": null
+    },
+    {
+        "id": 13,
+        "name": "vegetal",
+        "weaknesses": [
+            7
+        ],
+        "artwork": null
+    },
+    {
+        "id": 14,
+        "name": "mental",
+        "weaknesses": [],
+        "artwork": null
+    },
+    {
+        "id": 15,
+        "name": "sintético",
+        "weaknesses": [],
+        "artwork": null
+    },
+    {
+        "id": 16,
+        "name": "sonoro",
+        "weaknesses": [],
+        "artwork": null
+    },
+    {
+        "id": 17,
+        "name": "noturno",
+        "weaknesses": [],
+        "artwork": null
+    },
+    {
+        "id": 18,
+        "name": "terrestre",
+        "weaknesses": [],
+        "artwork": null
+    },
+    {
+        "id": 19,
+        "name": "tóxico",
+        "weaknesses": [],
+        "artwork": null
+    },
+    {
+        "id": 20,
+        "name": "aéreo",
+        "weaknesses": [],
+        "artwork": null
+    }
+]

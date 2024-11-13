@@ -1,0 +1,197 @@
+[
+    {
+        "id": 1,
+        "name": "Voara",
+        "types": [ 13 ],
+        "artwork": null,
+        "pre-evolution": null,
+        "evolution": {
+            "level": 16,
+            "to": 2
+        },
+        "abilities": [],
+        "starter": true,
+        "extinction-level": null
+    },
+    {
+        "id": 2,
+        "name": "Azurara",
+        "types": [ 13, 20 ],
+        "artwork": null,
+        "pre-evolution": 1,
+        "evolution": {
+            "level": 32,
+            "to": 3
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 3,
+        "name": "Ararazul",
+        "types": [ 13, 20 ],
+        "artwork": null,
+        "pre-evolution": 2,
+        "evolution": null,
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 4,
+        "name": "Pequemico",
+        "types": [ 7 ],
+        "artwork": null,
+        "pre-evolution": null,
+        "evolution": {
+            "level": 16,
+            "to": 5
+        },
+        "abilities": [],
+        "starter": true,
+        "extinction-level": null
+    },
+    {
+        "id": 5,
+        "name": "Micorado",
+        "types": [ 7 ],
+        "artwork": null,
+        "pre-evolution": 4,
+        "evolution": {
+            "level": 32,
+            "to": 6
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 6,
+        "name": "Douraleão",
+        "types": [ 7, 2 ],
+        "artwork": null,
+        "pre-evolution": 5,
+        "evolution": null,
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 7,
+        "name": "Capi",
+        "types": [ 1 ],
+        "artwork": null,
+        "pre-evolution": null,
+        "evolution": {
+            "level": 16,
+            "to": 8
+        },
+        "abilities": [],
+        "starter": true,
+        "extinction-level": null
+    },
+    {
+        "id": 8,
+        "name": "Varacapi",
+        "types": [ 1 ],
+        "artwork": null,
+        "pre-evolution": 7,
+        "evolution": {
+            "level": 32,
+            "to": 9
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 9,
+        "name": "Capilorde",
+        "types": [ 1, 12 ],
+        "artwork": null,
+        "pre-evolution": 8,
+        "evolution": null,
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 10,
+        "name": "Tamanduí",
+        "types": [ 18 ],
+        "artwork": null,
+        "pre-evolution": null,
+        "evolution": {
+            "level": 16,
+            "to": 11
+        },
+        "abilities": [],
+        "starter": true,
+        "extinction-level": null
+    },
+    {
+        "id": 11,
+        "name": "Tamirim",
+        "types": [ 18 ],
+        "artwork": null,
+        "pre-evolution": 10,
+        "evolution": {
+            "level": 32,
+            "to": 12
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 12,
+        "name": "Lutanduá",
+        "types": [ 18, 10 ],
+        "artwork": null,
+        "pre-evolution": 11,
+        "evolution": null,
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 13,
+        "name": "Magato",
+        "types": [ 4 ],
+        "artwork": null,
+        "pre-evolution": null,
+        "evolution": {
+            "level": 16,
+            "to": 14
+        },
+        "abilities": [],
+        "starter": true,
+        "extinction-level": null
+    },
+    {
+        "id": 14,
+        "name": "Maragaiato",
+        "types": [ 4 ],
+        "artwork": null,
+        "pre-evolution": 13,
+        "evolution": {
+            "level": 32,
+            "to": 15
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 15,
+        "name": "Amatirica",
+        "types": [ 4, 17 ],
+        "artwork": null,
+        "pre-evolution": 14,
+        "evolution": null,
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    }
+]
