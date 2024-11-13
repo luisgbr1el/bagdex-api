@@ -4,7 +4,7 @@ Uma API simples que possibilita obter dados do bestiário do jogo **[Bagdex](htt
 ## Endpoints
 Lista de *endpoints* já disponíveis na API.
 
-### /status
+### `/status`
 Checar o status atual da API.
 
 #### Parâmetros
@@ -19,13 +19,13 @@ Checar o status atual da API.
 }
 ```
 
-### /types
+### `/types`
 Listar os tipos de Bagmon do jogo.
 
 #### Parâmetros
 - **id** (opcional)
 
-    Retornará o tipo correspondente ao Id fornecido. (**Ex:** `types?id=1`)
+    Retornará o tipo correspondente ao Id fornecido. (**Ex:** `/types?id=1`)
 - **weaknesses** (opcional)
 
-    Retornará todos os tipos que possuírem as fraquezas fornecidas. Múltiplas fraquezas devem ser separadas por vírgula. (**Ex:** `types?weaknesses=1,2`)
+    Retornará todos os tipos que possuírem as fraquezas fornecidas. Múltiplas fraquezas devem ser separadas por vírgula. (**Ex:** `/types?weaknesses=1,2`)
