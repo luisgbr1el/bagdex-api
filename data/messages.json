@@ -1,0 +1,18 @@
+{
+    "typeNotFound": {
+        "error": "ERR_TYPE_NOT_FOUND",
+        "message": "The provided 'id' does not match any type."
+    },
+    "weaknessesNotFound": {
+        "error": "ERR_WEAKNESSES_NOT_FOUND",
+        "message": "The provided 'weaknesses' do not match any type."
+    },
+    "bagmonNotFound": {
+        "error": "ERR_BAGMON_NOT_FOUND",
+        "message": "The provided 'id' does not match any Bagmon."
+    },
+    "starterValueInvalid": {
+        "error": "ERR_STARTER_VALUE_INVALID",
+        "message": "The provided 'starter' param value is invalid. Please provide a boolean value."
+    }
+}
