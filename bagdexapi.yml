@@ -23,9 +23,20 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Status'
+                type: object
                 properties:
-                  - id
+                  name:
+                    type: string
+                    description: Nome da API
+                    example: BagdexAPI
+                  status:
+                    type: string
+                    description: Status da API
+                    example: OK
+                  version:
+                    type: string
+                    description: Versão da API
+                    example: 1.0.0
   /types:
     get:
       tags:
@@ -92,20 +103,3 @@ paths:
                     type: string
                     description: Mensagem de erro
                     example: The provided 'weaknesses' do not match any type.
-components:
-  schemas:
-    Status:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Nome da API
-          example: BagdexAPI
-        status:
-          type: string
-          description: Status da API
-          example: OK
-        version:
-          type: string
-          description: Versão da API
-          example: 1.0.0
