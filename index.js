@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const abilities = require('./data/abilities.json');
 const dex = require('./data/dex.json');
 const extinctionLevels = require('./data/extinctionLevels.json');
@@ -8,6 +9,22 @@ const messages = require('./data/messages.json');
 
 const app = express();
 const port = 3000;
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+app.get('/', (req, res) => {
+    res.render('index', { 
+        title: 'BagdexAPI',
+        endpoints: [
+            { path: '/api/status', description: 'Veja o status atual da API' },
+            { path: '/api/types', description: 'Veja os tipos dos Bagmon' },
+            { path: '/api/dex', description: 'Listar Bagmons' },
+        ] 
+    });
+});
 
 app.get('/api/status', (req, res) => {
     return res.status(200).json({
@@ -69,7 +86,7 @@ app.get('/api/dex', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+    console.log(`Server is running on port http://localhost:${port}/`);
 });
 
 module.exports = app;
