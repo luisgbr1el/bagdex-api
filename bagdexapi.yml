@@ -9,6 +9,8 @@ tags:
     description: Informações básicas da API.
   - name: Tipos
     description: Informações sobre as tipagens dos Bagmon.
+  - name: Dex
+    description: Informações sobre os Bagmon.
 paths:
   /status:
     get:
@@ -63,31 +65,29 @@ paths:
             example: 7,12
       responses:
         '200':
-          description: Foram encontradas tipagens que correspondem aos parâmetros fornecidos.
+          description: Foi encontrada uma tipagem correspondente ao Id fornecido.
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                      description: Id da tipagem
-                      format: int64
-                      example: 1
-                    name:
-                      type: string
-                      description: Nome da tipagem
-                      example: aquático
-                    weaknesses:
-                      type: array
-                      description: Fraquezas da tipagem
-                      example: [ 7, 12, 18 ]
-                    artwork:
-                      type: string
-                      description: URL da arte da tipagem
-                      example: null
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: Id da tipagem
+                    format: int64
+                    example: 1
+                  name:
+                    type: string
+                    description: Nome da tipagem
+                    example: aquático
+                  weaknesses:
+                    type: array
+                    description: Fraquezas da tipagem
+                    example: [ 7, 12, 18 ]
+                  artwork:
+                    type: string
+                    description: URL da arte da tipagem
+                    example: null
         '404':
           description: Nenhum tipo correspondeu aos parâmetros fornecidos.
           content:
@@ -98,8 +98,99 @@ paths:
                   error:
                     type: string
                     description: Identificador do erro
-                    example: ERR_WEAKNESSES_NOT_FOUND
+                    example: ERR_TYPE_NOT_FOUND
                   message:
                     type: string
                     description: Mensagem de erro
-                    example: The provided 'weaknesses' do not match any type.
+                    example: The provided 'id' does not match any type.
+  /dex:
+    get:
+      tags:
+        - Dex
+      summary: Veja a lista de Bagmon.
+      description: Veja a lista de Bagmon correspondentes aos parâmetros fornecidos.
+      operationId: dex
+      parameters:
+        - name: id
+          in: query
+          description: O Id do Bagmon.
+          required: false
+          explode: true
+          schema:
+            type: integer
+            example: 1
+        - name: starter
+          in: query
+          description: Apenas Bagmon iniciais (true); apenas os que não são iniciais (false).
+          required: false
+          explode: true
+          schema:
+            type: boolean
+            example: true
+      responses:
+        '200':
+          description: Foi encontrado um Bagmon correspondente ao Id fornecido.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: O Id do Bagmon
+                    format: int64
+                    example: 1
+                  name:
+                    type: string
+                    description: O nome do Bagmon
+                    example: Voara
+                  types:
+                    type: array
+                    description: Tipagens do Bagmon
+                    example: [ 13 ]
+                  artwork:
+                    type: string
+                    description: URL da arte do Bagmon
+                    example: null
+                  pre-evolution:
+                    type: integer
+                    description: Id da pré-evolução do Bagmon
+                    example: null
+                  evolution:
+                    type: object
+                    properties:
+                      level:
+                        type: integer
+                        description: Nível que o Bagmon atual evoluirá
+                        example: 16
+                      to:
+                        type: integer
+                        description: Id do Bagmon para qual o atual será evoluído
+                        example: 2
+                  abilities:
+                    type: array
+                    description: Habilidades que o Bagmon pode possuir
+                    example: []
+                  starter:
+                    type: boolean
+                    description: Declara se o Bagmon atual é um inicial
+                    example: true
+                  extinction-level:
+                    type: integer
+                    description: Nível de extinção que o Bagmon se encontra
+                    example: null
+        '404':
+          description: Nenhum Bagmon correspondeu aos parâmetros fornecidos.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Identificador do erro
+                    example: ERR_BAGMON_NOT_FOUND
+                  message:
+                    type: string
+                    description: Mensagem de erro
+                    example: The provided 'id' does not match any Bagmon.
