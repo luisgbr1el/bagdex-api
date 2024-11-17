@@ -107,7 +107,7 @@ paths:
     get:
       tags:
         - Dex
-      summary: Veja a lista de Bagmon.
+      summary: Veja a lista de Bagmon
       description: Veja a lista de Bagmon correspondentes aos parâmetros fornecidos.
       operationId: dex
       parameters:
