@@ -63,9 +63,9 @@ app.get('/api/types', (req, res) => {
 app.get('/api/dex', (req, res) => {
 
     if (req.query.id) {
-        const bagmonList = dex.find(bagmon => bagmon.id == req.query.id);
-        if (bagmonList)
-            return res.status(200).json(bagmonList);
+        const bagmon = dex.find(bagmon => bagmon.id == req.query.id);
+        if (bagmon)
+            return res.status(200).json(bagmon);
         else
             return res.status(404).json(messages.bagmonNotFound);
     }
@@ -83,6 +83,20 @@ app.get('/api/dex', (req, res) => {
     }
 
     return res.status(200).json(dex.sort((a, b) => a.id - b.id));
+});
+
+app.get('/api/extinction-levels', (req, res) => {
+    
+    if (req.query.level) {
+        extinction = extinctionLevels.find(extinction => extinction.level == req.query.level);
+
+        if (extinction)
+            return res.status(200).json(extinction);
+        else
+            return res.status(404).json(messages.extinctionLevelInvalid);
+    }
+
+    return res.status(200).json(extinctionLevels);
 });
 
 app.listen(port, () => {

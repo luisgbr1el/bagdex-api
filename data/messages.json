@@ -14,5 +14,9 @@
     "starterValueInvalid": {
         "error": "ERR_STARTER_VALUE_INVALID",
         "message": "The provided 'starter' param value is invalid. Please provide a boolean value."
+    },
+    "extinctionLevelInvalid": {
+        "error": "ERR_EXTINCTION_VALUE_INVALID",
+        "message": "The provided 'level' does not match any extinction."
     }
 }
