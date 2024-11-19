@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
             { path: '/api/status', description: 'Veja o status atual da API' },
             { path: '/api/types', description: 'Veja os tipos dos Bagmon' },
             { path: '/api/dex', description: 'Listar Bagmons' },
+            { path: 'api/extinction-levels', description: 'Listar níveis de extinção' }
         ] 
     });
 });
