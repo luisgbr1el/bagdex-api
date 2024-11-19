@@ -16,7 +16,7 @@
         "message": "The provided 'starter' param value is invalid. Please provide a boolean value."
     },
     "extinctionLevelInvalid": {
-        "error": "ERR_EXTINCTION_VALUE_INVALID",
-        "message": "The provided 'level' does not match any extinction."
+        "error": "ERR_EXTINCTION_LEVEL_INVALID",
+        "message": "The provided 'level' does not match any extinction level."
     }
 }

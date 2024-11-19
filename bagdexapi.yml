@@ -11,6 +11,8 @@ tags:
     description: Informações sobre as tipagens dos Bagmon.
   - name: Dex
     description: Informações sobre os Bagmon.
+  - name: Níveis de Extinção
+    description: Informações sobre os níveis de extinção dos Bagmon.
 paths:
   /status:
     get:
@@ -194,3 +196,50 @@ paths:
                     type: string
                     description: Mensagem de erro
                     example: The provided 'id' does not match any Bagmon.
+  /extinction-levels:
+    get:
+      tags:
+        - Níveis de Extinção
+      summary: Veja os níveis de extinção dos Bagmon
+      description: Veja os níveis de extinção dos Bagmon de acordo com os parâmetros fornecidos.
+      operationId: extinction-levels
+      parameters:
+        - name: level
+          in: query
+          description: O nível de extinção.
+          required: false
+          explode: true
+          schema:
+            type: integer
+            example: 0
+      responses:
+        '200':
+          description: Foi encontrado um nível de extinção correspondente ao fornecido.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  level:
+                    type: integer
+                    description: O nível de extinção
+                    example: 0
+                  description:
+                    type: string
+                    description: A descrição do nível de extinção
+                    example: Pouco Preocupante
+        '404':
+          description: Nenhum nível de extinção correspondeu aos parâmetros fornecidos.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Identificador do erro
+                    example: ERR_EXTINCTION_LEVEL_INVALID
+                  message:
+                    type: string
+                    description: Mensagem de erro
+                    example: The provided 'level' does not match any extinction level.
