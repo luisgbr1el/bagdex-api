@@ -1,3 +1,26 @@
 [
-    
+    {
+        "id": 1,
+        "name": "Arranhadinha",
+        "description": "Dá uma coçadinha no alvo com pequena chance de DANO CRÍTICO (5%).",
+        "damage": 35,
+        "cost": 6,
+        "type": 11
+    },
+    {
+        "id": 2,
+        "name": "Pre-para",
+        "description": "Planeja o ataque, gerando BUFFs de FORÇA e ESQUIVA por 1 turno.",
+        "damage": 0,
+        "cost": 8,
+        "type": 17
+    },
+    {
+        "id": 3,
+        "name": "Repangalejando",
+        "description": "Causa dano e tem chance de causar VACILADA no alvo.",
+        "damage": 55,
+        "cost": 16,
+        "type": 4
+    }
 ]
