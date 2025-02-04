@@ -4,10 +4,11 @@
         "name": "Voara",
         "types": [ 13 ],
         "artwork": null,
-        "pre-evolution": null,
         "evolution": {
-            "level": 16,
-            "to": 2
+            "type": null,
+            "from": null,
+            "to": [ 2 ],
+            "level": 16
         },
         "abilities": [],
         "starter": true,
@@ -18,10 +19,11 @@
         "name": "Azurara",
         "types": [ 13, 20 ],
         "artwork": null,
-        "pre-evolution": 1,
         "evolution": {
-            "level": 32,
-            "to": 3
+            "type": 0,
+            "from": 1,
+            "to": [ 3 ],
+            "level": 32
         },
         "abilities": [],
         "starter": false,
@@ -32,8 +34,12 @@
         "name": "Ararazul",
         "types": [ 13, 20 ],
         "artwork": null,
-        "pre-evolution": 2,
-        "evolution": null,
+        "evolution": {
+            "type": 0,
+            "from": 2,
+            "to": null,
+            "level": null
+        },
         "abilities": [],
         "starter": false,
         "extinction-level": null
@@ -43,10 +49,11 @@
         "name": "Pequemico",
         "types": [ 7 ],
         "artwork": null,
-        "pre-evolution": null,
         "evolution": {
-            "level": 16,
-            "to": 5
+            "type": null,
+            "from": null,
+            "to": [ 5 ],
+            "level": 16
         },
         "abilities": [],
         "starter": true,
@@ -57,10 +64,11 @@
         "name": "Micorado",
         "types": [ 7 ],
         "artwork": null,
-        "pre-evolution": 4,
         "evolution": {
-            "level": 32,
-            "to": 6
+            "type": 0,
+            "from": 4,
+            "to": [ 6 ],
+            "level": 32
         },
         "abilities": [],
         "starter": false,
@@ -71,8 +79,12 @@
         "name": "Douraleão",
         "types": [ 7, 2 ],
         "artwork": null,
-        "pre-evolution": 5,
-        "evolution": null,
+        "evolution": {
+            "type": 0,
+            "from": 5,
+            "to": null,
+            "level": null
+        },
         "abilities": [],
         "starter": false,
         "extinction-level": null
@@ -82,10 +94,11 @@
         "name": "Capi",
         "types": [ 1 ],
         "artwork": null,
-        "pre-evolution": null,
         "evolution": {
-            "level": 16,
-            "to": 8
+            "type": null,
+            "from": null,
+            "to": [ 8 ],
+            "level": 16
         },
         "abilities": [],
         "starter": true,
@@ -96,10 +109,11 @@
         "name": "Varacapi",
         "types": [ 1 ],
         "artwork": null,
-        "pre-evolution": 7,
         "evolution": {
-            "level": 32,
-            "to": 9
+            "type": 0,
+            "from": 7,
+            "to": [ 9 ],
+            "level": 32
         },
         "abilities": [],
         "starter": false,
@@ -110,8 +124,12 @@
         "name": "Capilorde",
         "types": [ 1, 12 ],
         "artwork": null,
-        "pre-evolution": 8,
-        "evolution": null,
+        "evolution": {
+            "type": 0,
+            "from": 8,
+            "to": null,
+            "level": null
+        },
         "abilities": [],
         "starter": false,
         "extinction-level": null
@@ -121,10 +139,11 @@
         "name": "Tamanduí",
         "types": [ 18 ],
         "artwork": null,
-        "pre-evolution": null,
         "evolution": {
-            "level": 16,
-            "to": 11
+            "type": null,
+            "from": null,
+            "to": [ 11 ],
+            "level": 16
         },
         "abilities": [],
         "starter": true,
@@ -135,10 +154,11 @@
         "name": "Tamirim",
         "types": [ 18 ],
         "artwork": null,
-        "pre-evolution": 10,
         "evolution": {
-            "level": 32,
-            "to": 12
+            "type": 0,
+            "from": 10,
+            "to": [ 12 ],
+            "level": 32
         },
         "abilities": [],
         "starter": false,
@@ -149,8 +169,12 @@
         "name": "Lutanduá",
         "types": [ 18, 10 ],
         "artwork": null,
-        "pre-evolution": 11,
-        "evolution": null,
+        "evolution": {
+            "type": 0,
+            "from": 11,
+            "to": null,
+            "level": null
+        },
         "abilities": [],
         "starter": false,
         "extinction-level": null
@@ -160,10 +184,11 @@
         "name": "Magato",
         "types": [ 4 ],
         "artwork": null,
-        "pre-evolution": null,
         "evolution": {
-            "level": 16,
-            "to": 14
+            "type": null,
+            "from": null,
+            "to": [ 14 ],
+            "level": 16
         },
         "abilities": [],
         "starter": true,
@@ -174,10 +199,11 @@
         "name": "Maragaiato",
         "types": [ 4 ],
         "artwork": null,
-        "pre-evolution": 13,
         "evolution": {
-            "level": 32,
-            "to": 15
+            "type": 0,
+            "from": 13,
+            "to": [ 15 ],
+            "level": 32
         },
         "abilities": [],
         "starter": false,
@@ -188,8 +214,162 @@
         "name": "Amatirica",
         "types": [ 4, 17 ],
         "artwork": null,
-        "pre-evolution": 14,
-        "evolution": null,
+        "evolution": {
+            "type": 0,
+            "from": 14,
+            "to": null,
+            "level": null
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 16,
+        "name": "Caramelo",
+        "types": [ 11 ],
+        "artwork": null,
+        "evolution": {
+            "type": null,
+            "from": null,
+            "to": [ 17 ],
+            "level": 16
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 17,
+        "name": "Caralata",
+        "types": [ 11 ],
+        "artwork": null,
+        "evolution": {
+            "type": 0,
+            "from": 16,
+            "to": [ 18 ],
+            "level": 32
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 18,
+        "name": "Viramelo",
+        "types": [ 11, 14 ],
+        "artwork": null,
+        "evolution": {
+            "type": 0,
+            "from": 17,
+            "to": null,
+            "level": null
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 19,
+        "name": "Iaçá",
+        "types": [ 13 ],
+        "artwork": null,
+        "evolution": {
+            "type": null,
+            "from": null,
+            "to": [ 20, 21 ],
+            "level": 16
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 20,
+        "name": "Açaíne",
+        "types": [ 11, 4 ],
+        "artwork": null,
+        "evolution": {
+            "type": 0,
+            "from": 19,
+            "to": null,
+            "level": null
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 21,
+        "name": "Sorvetine",
+        "types": [ 11, 8 ],
+        "artwork": null,
+        "evolution": {
+            "type": 1,
+            "from": 19,
+            "to": null,
+            "level": null
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 22,
+        "name": "Guaranim",
+        "types": [ 13 ],
+        "artwork": null,
+        "evolution": {
+            "type": null,
+            "from": null,
+            "to": [ 23 ],
+            "level": 16
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 23,
+        "name": "Aranaçu",
+        "types": [ 13, 5 ],
+        "artwork": null,
+        "evolution": {
+            "type": 0,
+            "from": 22,
+            "to": null,
+            "level": null
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 24,
+        "name": "Beboto",
+        "types": [ 1 ],
+        "artwork": null,
+        "evolution": {
+            "type": null,
+            "from": null,
+            "to": [ 25 ],
+            "level": 16
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 25,
+        "name": "Bodutor",
+        "types": [ 1, 14 ],
+        "artwork": null,
+        "evolution": {
+            "type": 0,
+            "from": 24,
+            "to": null,
+            "level": null
+        },
         "abilities": [],
         "starter": false,
         "extinction-level": null
