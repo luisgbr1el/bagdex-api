@@ -6,6 +6,28 @@ const extinctionLevels = require('./data/extinctionLevels.json');
 const info = require('./data/info.json');
 let types = require('./data/types.json');
 const messages = require('./data/messages.json');
+const redis = require("redis");
+const dotenv = require('dotenv');
+dotenv.config();
+
+const redisClient = redis.createClient({
+    url: process.env.REDIS_CONNECTION_URL || process.env.KV_URL,
+});
+
+redisClient.connect().catch(console.error);
+
+const cache = async (req, res, next) => {
+    const key = req.originalUrl;
+    const cachedData = await redisClient.get(key);
+
+    if (cachedData) {
+        console.log("Cache hit");
+        return res.json(JSON.parse(cachedData));
+    }
+
+    console.log("Cache miss");
+    next();
+};
 
 const app = express();
 const port = 3000;
@@ -16,14 +38,14 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.get('/', (req, res) => {
-    res.render('index', { 
+    res.render('index', {
         title: 'BagdexAPI',
         endpoints: [
             { path: '/api/status', description: 'Veja o status atual da API' },
             { path: '/api/types', description: 'Veja os tipos dos Bagmon' },
             { path: '/api/dex', description: 'Listar Bagmons' },
             { path: 'api/extinction-levels', description: 'Listar níveis de extinção' }
-        ] 
+        ]
     });
 });
 
@@ -35,7 +57,7 @@ app.get('/api/status', (req, res) => {
     });
 });
 
-app.get('/api/types', (req, res) => {
+app.get('/api/types', cache, async (req, res) => {
 
     if (req.query.id) {
         const type = types.find(type => type.id == req.query.id);
@@ -58,10 +80,12 @@ app.get('/api/types', (req, res) => {
             return res.status(200).json(filteredTypes.sort((a, b) => a.id - b.id));
     }
 
+    await redisClient.setEx(req.originalUrl, 3600, JSON.stringify(types.sort((a, b) => a.id - b.id)));
+
     return res.status(200).json(types.sort((a, b) => a.id - b.id));
 });
 
-app.get('/api/dex', (req, res) => {
+app.get('/api/dex', cache, async (req, res) => {
 
     if (req.query.id) {
         const bagmon = dex.find(bagmon => bagmon.id == req.query.id);
@@ -83,11 +107,13 @@ app.get('/api/dex', (req, res) => {
             return res.status(404).json(messages.starterValueInvalid);
     }
 
+    await redisClient.setEx(req.originalUrl, 3600, JSON.stringify(dex.sort((a, b) => a.id - b.id)));
+    
     return res.status(200).json(dex.sort((a, b) => a.id - b.id));
 });
 
-app.get('/api/extinction-levels', (req, res) => {
-    
+app.get('/api/extinction-levels', cache, async (req, res) => {
+
     if (req.query.level) {
         extinction = extinctionLevels.find(extinction => extinction.level == req.query.level);
 
@@ -96,6 +122,8 @@ app.get('/api/extinction-levels', (req, res) => {
         else
             return res.status(404).json(messages.extinctionLevelInvalid);
     }
+
+    await redisClient.setEx(req.originalUrl, 3600, JSON.stringify(extinctionLevels));
 
     return res.status(200).json(extinctionLevels);
 });
