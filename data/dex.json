@@ -373,5 +373,80 @@
         "abilities": [],
         "starter": false,
         "extinction-level": null
+    },
+    {
+        "id": 26,
+        "name": "Laguito",
+        "types": [ 9 ],
+        "artwork": null,
+        "evolution": {
+            "type": null,
+            "from": null,
+            "to": [ 27 ],
+            "level": 16
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 27,
+        "name": "Moscasulo",
+        "types": [ 9 ],
+        "artwork": null,
+        "evolution": {
+            "type": 0,
+            "from": 26,
+            "to": [ 28 ],
+            "level": 32
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 28,
+        "name": "Bansquito",
+        "types": [ 9, 1 ],
+        "artwork": null,
+        "evolution": {
+            "type": 0,
+            "from": 27,
+            "to": null,
+            "level": null
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 29,
+        "name": "Chanim",
+        "types": [ 11 ],
+        "artwork": null,
+        "evolution": {
+            "type": null,
+            "from": null,
+            "to": [ 30 ],
+            "level": 16
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 30,
+        "name": "Furtuna",
+        "types": [ 11, 17 ],
+        "artwork": null,
+        "evolution": {
+            "type": 0,
+            "from": 29,
+            "to": null,
+            "level": null
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
     }
 ]
