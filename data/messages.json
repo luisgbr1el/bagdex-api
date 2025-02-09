@@ -9,7 +9,7 @@
     },
     "bagmonNotFound": {
         "error": "ERR_BAGMON_NOT_FOUND",
-        "message": "The provided 'id' does not match any Bagmon."
+        "message": "The provided parameters does not match any Bagmon."
     },
     "starterValueInvalid": {
         "error": "ERR_STARTER_VALUE_INVALID",

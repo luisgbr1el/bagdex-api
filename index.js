@@ -107,6 +107,19 @@ app.get('/api/dex', cache, async (req, res) => {
             return res.status(404).json(messages.starterValueInvalid);
     }
 
+    if (req.query.types) {
+        const types = req.query.types.split(',').map(Number);
+
+        const filteredDex = dex.filter(bagmon =>
+            types.every(type => bagmon.types.includes(type))
+        );
+
+        if (filteredDex.length === 0)
+            return res.status(404).json(messages.bagmonNotFound);
+        else
+            return res.status(200).json(filteredDex.sort((a, b) => a.id - b.id));
+    }
+
     await redisClient.setEx(req.originalUrl, 3600, JSON.stringify(dex.sort((a, b) => a.id - b.id)));
     
     return res.status(200).json(dex.sort((a, b) => a.id - b.id));
