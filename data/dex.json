@@ -448,5 +448,65 @@
         "abilities": [],
         "starter": false,
         "extinction-level": null
+    },
+    {
+        "id": 31,
+        "name": "Fofilho",
+        "types": [ 13 ],
+        "artwork": null,
+        "evolution": {
+            "type": null,
+            "from": null,
+            "to": [ 32 ],
+            "level": 16
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 32,
+        "name": "Pamonhana",
+        "types": [ 13 ],
+        "artwork": null,
+        "evolution": {
+            "type": 0,
+            "from": 31,
+            "to": null,
+            "level": null
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 33,
+        "name": "Jondi",
+        "types": [ 18 ],
+        "artwork": null,
+        "evolution": {
+            "type": null,
+            "from": null,
+            "to": [ 34 ],
+            "level": 16
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 34,
+        "name": "Bojarro",
+        "types": [ 18, 20 ],
+        "artwork": null,
+        "evolution": {
+            "type": 0,
+            "from": 33,
+            "to": null,
+            "level": null
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
     }
 ]
