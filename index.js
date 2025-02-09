@@ -10,6 +10,8 @@ const redis = require("redis");
 const dotenv = require('dotenv');
 dotenv.config();
 
+const expirationTimeRedis = 3600;
+
 const redisClient = redis.createClient({
     url: process.env.REDIS_CONNECTION_URL || process.env.KV_URL,
 });
@@ -80,7 +82,7 @@ app.get('/api/types', cache, async (req, res) => {
             return res.status(200).json(filteredTypes.sort((a, b) => a.id - b.id));
     }
 
-    await redisClient.setEx(req.originalUrl, 3600, JSON.stringify(types.sort((a, b) => a.id - b.id)));
+    await redisClient.setEx(req.originalUrl, expirationTimeRedis, JSON.stringify(types.sort((a, b) => a.id - b.id)));
 
     return res.status(200).json(types.sort((a, b) => a.id - b.id));
 });
@@ -120,7 +122,7 @@ app.get('/api/dex', cache, async (req, res) => {
             return res.status(200).json(filteredDex.sort((a, b) => a.id - b.id));
     }
 
-    await redisClient.setEx(req.originalUrl, 3600, JSON.stringify(dex.sort((a, b) => a.id - b.id)));
+    await redisClient.setEx(req.originalUrl, expirationTimeRedis, JSON.stringify(dex.sort((a, b) => a.id - b.id)));
     
     return res.status(200).json(dex.sort((a, b) => a.id - b.id));
 });
@@ -136,7 +138,7 @@ app.get('/api/extinction-levels', cache, async (req, res) => {
             return res.status(404).json(messages.extinctionLevelInvalid);
     }
 
-    await redisClient.setEx(req.originalUrl, 3600, JSON.stringify(extinctionLevels));
+    await redisClient.setEx(req.originalUrl, expirationTimeRedis, JSON.stringify(extinctionLevels));
 
     return res.status(200).json(extinctionLevels);
 });
