@@ -508,5 +508,80 @@
         "abilities": [],
         "starter": false,
         "extinction-level": null
+    },
+    {
+        "id": 35,
+        "name": "Benja",
+        "types": [ 15, 4 ],
+        "artwork": null,
+        "evolution": {
+            "type": null,
+            "from": null,
+            "to": [ 36 ],
+            "level": 16
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 36,
+        "name": "Benjamais",
+        "types": [ 15, 4 ],
+        "artwork": null,
+        "evolution": {
+            "type": 0,
+            "from": 35,
+            "to": [ 37 ],
+            "level": 32
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 37,
+        "name": "Benjamuitos",
+        "types": [ 15, 4 ],
+        "artwork": null,
+        "evolution": {
+            "type": 0,
+            "from": 36,
+            "to": null,
+            "level": null
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 38,
+        "name": "Pondi",
+        "types": [ 5 ],
+        "artwork": null,
+        "evolution": {
+            "type": null,
+            "from": null,
+            "to": [ 39 ],
+            "level": 16
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 39,
+        "name": "Diquejos",
+        "types": [ 5 ],
+        "artwork": null,
+        "evolution": {
+            "type": 0,
+            "from": 38,
+            "to": null,
+            "level": null
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
     }
 ]
