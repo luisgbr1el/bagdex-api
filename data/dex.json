@@ -583,5 +583,95 @@
         "abilities": [],
         "starter": false,
         "extinction-level": null
+    },
+    {
+        "id": 44,
+        "name": "Grafé",
+        "types": [ 13 ],
+        "artwork": null,
+        "evolution": {
+            "type": null,
+            "from": null,
+            "to": [ 45 ],
+            "level": 16
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 45,
+        "name": "Torrafé",
+        "types": [ 13, 7 ],
+        "artwork": null,
+        "evolution": {
+            "type": 0,
+            "from": 44,
+            "to": [ 46 ],
+            "level": 32
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 46,
+        "name": "Cafasma",
+        "types": [ 6, 7 ],
+        "artwork": null,
+        "evolution": {
+            "type": 0,
+            "from": 45,
+            "to": null,
+            "level": null
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 47,
+        "name": "Duratista",
+        "types": [ 12 ],
+        "artwork": null,
+        "evolution": {
+            "type": null,
+            "from": null,
+            "to": [ 48 ],
+            "level": 16
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 48,
+        "name": "Dutrino",
+        "types": [ 12 ],
+        "artwork": null,
+        "evolution": {
+            "type": 0,
+            "from": 47,
+            "to": [ 49 ],
+            "level": 32
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 49,
+        "name": "Duraíba",
+        "types": [ 12, 14 ],
+        "artwork": null,
+        "evolution": {
+            "type": 0,
+            "from": 48,
+            "to": null,
+            "level": null
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
     }
 ]
