@@ -15,8 +15,12 @@
         "error": "ERR_STARTER_VALUE_INVALID",
         "message": "The provided 'starter' param value is invalid. Please provide a boolean value."
     },
-    "extinctionLevelInvalid": {
-        "error": "ERR_EXTINCTION_LEVEL_INVALID",
+    "extinctionLevelNotFound": {
+        "error": "ERR_EXTINCTION_NOT_FOUND",
         "message": "The provided 'level' does not match any extinction level."
+    },
+    "evolutionTypeNotFound": {
+        "error": "ERR_EVOLUTION_TYPE_NOT_FOUND",
+        "message": "The provided 'type' does not match any evolution."
     }
 }

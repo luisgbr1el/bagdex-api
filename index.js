@@ -1,10 +1,11 @@
 const express = require('express');
 const path = require('path');
-const abilities = require('./data/abilities.json');
+const info = require('./data/info.json');
+const types = require('./data/types.json');
 const dex = require('./data/dex.json');
 const extinctionLevels = require('./data/extinctionLevels.json');
-const info = require('./data/info.json');
-let types = require('./data/types.json');
+const evolutionTypes = require('./data/evolutionTypes.json');
+const abilities = require('./data/abilities.json');
 const messages = require('./data/messages.json');
 const redis = require("redis");
 const dotenv = require('dotenv');
@@ -22,12 +23,9 @@ const cache = async (req, res, next) => {
     const key = req.originalUrl;
     const cachedData = await redisClient.get(key);
 
-    if (cachedData) {
-        console.log("Cache hit");
+    if (cachedData)
         return res.json(JSON.parse(cachedData));
-    }
 
-    console.log("Cache miss");
     next();
 };
 
@@ -46,7 +44,8 @@ app.get('/', (req, res) => {
             { path: '/api/status', description: 'Veja o status atual da API' },
             { path: '/api/types', description: 'Veja os tipos dos Bagmon' },
             { path: '/api/dex', description: 'Listar Bagmons' },
-            { path: '/api/extinction-levels', description: 'Listar níveis de extinção' }
+            { path: '/api/extinction-levels', description: 'Listar níveis de extinção' },
+            { path: '/api/evolution-types', description: 'Listar tipos de evolução' }
         ]
     });
 });
@@ -135,13 +134,30 @@ app.get('/api/extinction-levels', cache, async (req, res) => {
         if (extinction)
             return res.status(200).json(extinction);
         else
-            return res.status(404).json(messages.extinctionLevelInvalid);
+            return res.status(404).json(messages.extinctionLevelNotFound);
     }
 
     await redisClient.setEx(req.originalUrl, expirationTimeRedis, JSON.stringify(extinctionLevels));
 
     return res.status(200).json(extinctionLevels);
 });
+
+app.get('/api/evolution-types', cache, async (req, res) => {
+
+    if (req.query.type) {
+        evolution = evolutionTypes.find(evolution => evolution.type == req.query.type);
+
+        if (evolution)
+            return res.status(200).json(evolution);
+        else
+            return res.status(404).json(messages.evolutionTypeNotFound);
+    }
+
+    await redisClient.setEx(req.originalUrl, expirationTimeRedis, JSON.stringify(evolutionTypes));
+
+    return res.status(200).json(evolutionTypes);
+});
+
 
 app.listen(port, () => {
     console.log(`Server is running on port http://localhost:${port}/`);
