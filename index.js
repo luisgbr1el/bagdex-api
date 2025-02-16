@@ -87,43 +87,54 @@ app.get('/api/types', cache, async (req, res) => {
 });
 
 app.get('/api/dex', cache, async (req, res) => {
+    const page = req.query.page ? parseInt(req.query.page) : 1;
+    if (isNaN(page) || page < 1) {
+        return res.status(400).json(messages.pageParameterInvalid);
+    }
+
+    const pageSize = req.query.pageSize ? parseInt(req.query.pageSize) : 20;
+    if (isNaN(pageSize) || pageSize < 1 || pageSize > 100) {
+        return res.status(400).json(messages.pageSizeParameterInvalid);
+    }
 
     if (req.query.id) {
         const bagmon = dex.find(bagmon => bagmon.id == req.query.id);
-        if (bagmon)
-            return res.status(200).json(bagmon);
-        else
-            return res.status(404).json(messages.bagmonNotFound);
+        return bagmon 
+            ? res.status(200).json({ count: 1, list: [bagmon] }) 
+            : res.status(404).json(messages.bagmonNotFound);
     }
 
+    let filteredDex = dex;
+
     if (req.query.starter) {
-        if (req.query.starter !== 'true' && req.query.starter !== 'false')
-            return res.status(404).json(messages.starterValueInvalid);
-
-        const bagmonList = dex.filter(bagmon => bagmon.starter === (req.query.starter === 'true'));
-
-        if (bagmonList)
-            return res.status(200).json(bagmonList);
-        else
-            return res.status(404).json(messages.starterValueInvalid);
+        if (req.query.starter !== 'true' && req.query.starter !== 'false') {
+            return res.status(400).json(messages.starterValueInvalid);
+        }
+        filteredDex = filteredDex.filter(bagmon => bagmon.starter === (req.query.starter === 'true'));
     }
 
     if (req.query.types) {
         const types = req.query.types.split(',').map(Number);
-
-        const filteredDex = dex.filter(bagmon =>
-            types.every(type => bagmon.types.includes(type))
-        );
-
-        if (filteredDex.length === 0)
-            return res.status(404).json(messages.bagmonNotFound);
-        else
-            return res.status(200).json(filteredDex.sort((a, b) => a.id - b.id));
+        filteredDex = filteredDex.filter(bagmon => types.every(type => bagmon.types.includes(type)));
     }
 
-    await redisClient.setEx(req.originalUrl, expirationTimeRedis, JSON.stringify(dex.sort((a, b) => a.id - b.id)));
-    
-    return res.status(200).json(dex.sort((a, b) => a.id - b.id));
+    if (filteredDex.length === 0) {
+        return res.status(404).json(messages.bagmonNotFound);
+    }
+
+    const totalItems = filteredDex.length;
+    const totalPages = Math.ceil(totalItems / pageSize);
+    const startIndex = (page - 1) * pageSize;
+    const endIndex = page * pageSize;
+    const paginatedDex = filteredDex.slice(startIndex, endIndex);
+
+    if (paginatedDex.length === 0) {
+        return res.status(400).json(messages.pageParameterInvalid);
+    }
+
+    const response = { page, totalPages, count: paginatedDex.length, list: paginatedDex };
+    await redisClient.setEx(req.originalUrl, expirationTimeRedis, JSON.stringify(response));
+    return res.status(200).json(response);
 });
 
 app.get('/api/extinction-levels', cache, async (req, res) => {
@@ -157,7 +168,6 @@ app.get('/api/evolution-types', cache, async (req, res) => {
 
     return res.status(200).json(evolutionTypes);
 });
-
 
 app.listen(port, () => {
     console.log(`Server is running on port http://localhost:${port}/`);

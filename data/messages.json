@@ -1,15 +1,15 @@
 {
     "typeNotFound": {
         "error": "ERR_TYPE_NOT_FOUND",
-        "message": "The provided 'id' does not match any type."
+        "message": "The 'id' provided does not match any type."
     },
     "weaknessesNotFound": {
         "error": "ERR_WEAKNESSES_NOT_FOUND",
-        "message": "The provided 'weaknesses' do not match any type."
+        "message": "The 'weaknesses' provided do not match any type."
     },
     "bagmonNotFound": {
         "error": "ERR_BAGMON_NOT_FOUND",
-        "message": "The provided parameters does not match any Bagmon."
+        "message": "The parameters provided does not match any Bagmon."
     },
     "starterValueInvalid": {
         "error": "ERR_STARTER_VALUE_INVALID",
@@ -17,10 +17,22 @@
     },
     "extinctionLevelNotFound": {
         "error": "ERR_EXTINCTION_NOT_FOUND",
-        "message": "The provided 'level' does not match any extinction level."
+        "message": "The 'level' provided does not match any extinction level."
     },
     "evolutionTypeNotFound": {
         "error": "ERR_EVOLUTION_TYPE_NOT_FOUND",
-        "message": "The provided 'type' does not match any evolution."
+        "message": "The 'type' provided does not match any evolution."
+    },
+    "pageNotFound": {
+        "error": "ERR_PAGE_NOT_FOUND",
+        "message": "The page number provided is invalid for the provided page size."
+    },
+    "pageParameterInvalid": {
+        "error": "ERR_PAGE_PARAMETER_INVALID",
+        "message": "The 'page' parameter must be a number and greater than 0."
+    },
+    "pageSizeParameterInvalid": {
+        "error": "ERR_PAGE_SIZE_PARAMETER_INVALID",
+        "message": "The 'pageSize' parameter must be a number and less than 100."
     }
 }
