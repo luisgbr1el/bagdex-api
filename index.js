@@ -129,7 +129,7 @@ app.get('/api/dex', cache, async (req, res) => {
     const paginatedDex = filteredDex.slice(startIndex, endIndex);
 
     if (paginatedDex.length === 0) {
-        return res.status(400).json(messages.pageParameterInvalid);
+        return res.status(400).json(messages.pageNotFound);
     }
 
     const response = { page, totalPages, count: paginatedDex.length, list: paginatedDex };
