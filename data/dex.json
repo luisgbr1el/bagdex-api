@@ -673,5 +673,80 @@
         "abilities": [],
         "starter": false,
         "extinction-level": null
+    },
+    {
+        "id": 54,
+        "name": "Caçulito",
+        "types": [ 15 ],
+        "artwork": null,
+        "evolution": {
+            "type": null,
+            "from": null,
+            "to": [ 55 ],
+            "level": 16
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 55,
+        "name": "Caçuluta",
+        "types": [ 15, 10 ],
+        "artwork": null,
+        "evolution": {
+            "type": 0,
+            "from": 54,
+            "to": [ 56 ],
+            "level": 32
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 56,
+        "name": "Caçumestre",
+        "types": [ 15, 10 ],
+        "artwork": null,
+        "evolution": {
+            "type": 0,
+            "from": 55,
+            "to": null,
+            "level": null
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 57,
+        "name": "Biscolacha",
+        "types": [ 11, 10 ],
+        "artwork": null,
+        "evolution": {
+            "type": null,
+            "from": null,
+            "to": [ 58 ],
+            "level": 16
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
+    },
+    {
+        "id": 58,
+        "name": "Bolachoito",
+        "types": [ 11, 10 ],
+        "artwork": null,
+        "evolution": {
+            "type": 0,
+            "from": 57,
+            "to": null,
+            "level": null
+        },
+        "abilities": [],
+        "starter": false,
+        "extinction-level": null
     }
 ]
